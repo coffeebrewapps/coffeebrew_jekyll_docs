@@ -1,0 +1,32 @@
+name: Release Gem
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    if: "github.repository_owner == 'coffeebrewapps'"
+    name: 'Release Gem (Ruby ${{ matrix.ruby-version }})'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        ruby-version:
+          - 2.7
+          - 3.0
+          - 3.1
+          - 3.2
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: 'Set up Ruby ${{ matrix.ruby-version }}'
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+      - name: Build and Publish Gem
+        uses: ashmaroli/release-gem@dist
+        with:
+          gemspec_name: coffeebrew_jekyll_docs
+        env:
+          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_GEM_PUSH_API_KEY }}
