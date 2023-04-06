@@ -1,0 +1,3 @@
+.tool-versions
+*.gem
+Gemfile.lock
