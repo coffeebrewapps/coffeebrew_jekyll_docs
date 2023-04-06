@@ -23,7 +23,7 @@ cat $index_src >> $index_dest
 echo "Created $index_dest..."
 cat $index_dest
 
-sed -i "" 's/\(.*\)LICENSE/\1{{ site.baseurl }}\/license.html/g' $index_dest
+sed -i 's/\(.*\)LICENSE/\1{{ site.baseurl }}\/license.html/g' $index_dest
 
 ###
 # Build _versions/${version}.md from current README.md
@@ -43,7 +43,7 @@ cat $index_src >> $version_dest
 echo "Created $version_dest..."
 cat $version_dest
 
-sed -i "" 's/\(.*\)LICENSE/\1{{ site.baseurl }}\/license.html/g' $version_dest
+sed -i 's/\(.*\)LICENSE/\1{{ site.baseurl }}\/license.html/g' $version_dest
 
 ###
 # Build licences.md from current LICENSE
@@ -83,5 +83,5 @@ cat $changelog_src >> $changelog_dest
 echo "Created $changelog_dest..."
 cat $changelog_dest
 
-sed -i "" 's/https:\/\/github.com\/coffeebrewapps\/coffeebrew_jekyll_docs\/blob\/v/{{ site.baseurl }}\/versions\//g' $changelog_dest
-sed -i "" 's/\/README.md/.html/g' $changelog_dest
+sed -i 's/https:\/\/github.com\/coffeebrewapps\/coffeebrew_jekyll_docs\/blob\/v/{{ site.baseurl }}\/versions\//g' $changelog_dest
+sed -i 's/\/README.md/.html/g' $changelog_dest
