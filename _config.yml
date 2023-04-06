@@ -1,0 +1,43 @@
+baseurl: /coffeebrew_jekyll_docs
+
+theme: coffeebrew_jekyll_docs
+
+exclude:
+  - .git
+  - .github
+  - _versions/.keep
+  - pkg
+  - script
+  - .gitignore
+  - .tool-versions
+  - CHANGELOG.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - Rakefile
+  - coffeebrew_jekyll_docs.gemspec
+
+plugins:
+  - jekyll-toc
+
+toc:
+  min_level: 2
+  max_level: 3
+  list_class: toc
+
+collections:
+  versions:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      toc: true
+  - scope:
+      path: ""
+      type: "versions"
+    values:
+      layout: version
