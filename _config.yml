@@ -26,6 +26,21 @@ toc:
   max_level: 3
   list_class: toc
 
+coffeebrew_jekyll_docs:
+  copyright: "Coffee Brew Apps"
+  license: "MIT License"
+  socials:
+    - link: "https://github.com/coffeebrewapps"
+      icon: "fa-brands fa-github"
+    - link: "https://www.linkedin.com/company/coffeebrewapps/"
+      icon: "fa-brands fa-linkedin"
+    - link: "mailto:coffeebrewapps+hi@gmail.com"
+      icon: "fa-solid fa-envelope"
+  powered_by:
+    host:
+      - link: "https://github.com"
+        name: "Github Pages"
+
 collections:
   versions:
     output: true

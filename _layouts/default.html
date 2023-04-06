@@ -32,21 +32,21 @@
     </a>
     <footer class="site-footer">
       <div class="copyright">
-        <span>Coffee Brew Apps © {{ site.time | date: "%Y" }}</span>
+        <span>{{ site.coffeebrew_jekyll_docs.copyright }} © {{ site.time | date: "%Y" }}</span>
       </div>
       <div class="socials">
-        <a href="https://github.com/coffeebrewapps" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/company/coffeebrewapps/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="mailto:coffeebrewapps+hi@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        {% for social in site.coffeebrew_jekyll_docs.socials %}
+        <a href="{{ social.link }}"><i class="{{ social.icon }}"></i></a>
+        {% endfor %}
       </div>
       <div class="powered-by">
         <div class="link">Powered by <a href="https://jekyllrb.com" target="_blank">Jekyll</a></div>
         <div class="divider">|</div>
-        <div class="link">Theme by <a href="#">Coffee Brew Apps</a></div>
+        <div class="link">Theme by <a href="https://www.coffeebrewapps.com/coffeebrew_jekyll_docs/">Coffee Brew Apps</a></div>
         <div class="divider">|</div>
-        <div class="link">Hosted by <a href="https://github.com" target="_blank">Github Pages</a></div>
+        <div class="link">Hosted by <a href="{{ site.coffeebrew_jekyll_docs.powered_by.host.link }}" target="_blank">{{ site.coffeebrew_jekyll_docs.powered_by.host.name }}</a></div>
         <div class="divider">|</div>
-        <div class="link">Under <a href="{{ site.baseurl }}/license.html" target="_blank">MIT License</a></div>
+        <div class="link">Under <a href="{{ site.baseurl }}/license.html" target="_blank">{{ site.coffeebrew_jekyll_docs.license }}</a></div>
       </div>
     </footer>
   </body>
