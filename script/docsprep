@@ -20,6 +20,9 @@ version: $version
 
 cat $index_src >> $index_dest
 
+echo "Created $index_dest..."
+cat $index_dest
+
 sed -i "" 's/\(.*\)LICENSE/\1{{ site.baseurl }}\/license.html/g' $index_dest
 
 ###
@@ -36,6 +39,9 @@ version: $version
 ---" > $version_dest
 
 cat $index_src >> $version_dest
+
+echo "Created $version_dest..."
+cat $version_dest
 
 sed -i "" 's/\(.*\)LICENSE/\1{{ site.baseurl }}\/license.html/g' $version_dest
 
@@ -55,6 +61,9 @@ version: $version
 
 cat $license_src >> $license_dest
 
+echo "Created $license_dest..."
+cat $license_dest
+
 ###
 # Build versions.md from current CHANGELOG.md
 ###
@@ -70,6 +79,9 @@ version: $version
 ---" > $changelog_dest
 
 cat $changelog_src >> $changelog_dest
+
+echo "Created $changelog_dest..."
+cat $changelog_dest
 
 sed -i "" 's/https:\/\/github.com\/coffeebrewapps\/coffeebrew_jekyll_docs\/blob\/v/{{ site.baseurl }}\/versions\//g' $changelog_dest
 sed -i "" 's/\/README.md/.html/g' $changelog_dest
