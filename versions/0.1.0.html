@@ -33,13 +33,12 @@
               
                 <option selected="selected" value="/coffeebrew_jekyll_docs/versions/0.1.0.html">0.1.0</option>
               
-                <option  value="/coffeebrew_jekyll_docs/versions/0.2.0.html">0.2.0</option>
-              
             </select>
           </div>
         </div>
         <ul id="toc" class="toc">
 <li class="toc-entry toc-h2"><a href="#installation">Installation</a></li>
+<li class="toc-entry toc-h2"><a href="#configuration">Configuration</a></li>
 <li class="toc-entry toc-h2"><a href="#license">License</a></li>
 </ul>
       </div>
@@ -57,16 +56,67 @@
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'coffeebrew_jekyll_docs'</span>
 </code></pre></div></div>
 
-<p>And then add this line to your site’s <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+<h2 id="configuration">Configuration</h2>
 
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">theme</span><span class="pi">:</span> <span class="s">coffeebrew_jekyll_docs</span>
+<p>To use the theme properly, you need to configure in <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">baseurl</span><span class="pi">:</span> <span class="s">/your_base_url</span>
+<span class="na">theme</span><span class="pi">:</span> <span class="s">coffeebrew_jekyll_docs</span>
+
+<span class="c1"># The theme uses the jekyll-toc plugin to render table of contents for your content</span>
+<span class="na">plugins</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">jekyll-toc</span>
+
+<span class="c1"># Configure the plugin, see https://github.com/toshimaru/jekyll-toc</span>
+<span class="na">toc</span><span class="pi">:</span>
+
+<span class="c1"># Here's the config for the theme used by this gem doc</span>
+<span class="na">coffeebrew_jekyll_docs</span><span class="pi">:</span>
+  <span class="na">copyright</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Coffee</span><span class="nv"> </span><span class="s">Brew</span><span class="nv"> </span><span class="s">Apps"</span>
+  <span class="na">license</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">MIT</span><span class="nv"> </span><span class="s">License"</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/license.html"</span>
+  <span class="na">socials</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">link</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/coffeebrewapps/coffeebrew_jekyll_docs"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fa-brands</span><span class="nv"> </span><span class="s">fa-github"</span>
+    <span class="pi">-</span> <span class="na">link</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://www.linkedin.com/company/coffeebrewapps/"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fa-brands</span><span class="nv"> </span><span class="s">fa-linkedin"</span>
+    <span class="pi">-</span> <span class="na">link</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mailto:coffeebrewapps+hi@gmail.com"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fa-solid</span><span class="nv"> </span><span class="s">fa-envelope"</span>
+  <span class="na">powered_by</span><span class="pi">:</span>
+    <span class="na">host</span><span class="pi">:</span>
+      <span class="na">link</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com"</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Github</span><span class="nv"> </span><span class="s">Pages"</span>
+
+<span class="c1"># This allows for your changelog to be versioned</span>
+<span class="na">collections</span><span class="pi">:</span>
+  <span class="na">versions</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="kc">true</span>
+
+<span class="c1"># Add this to the defaults in addition to your other defaults</span>
+<span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">versions"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s">version</span>
 </code></pre></div></div>
+
+<p>Additionally, create the navigation data in <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code> so that the theme can render the top navbar:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Home</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Versions</span>
+  <span class="na">link</span><span class="pi">:</span> <span class="s">/versions.html</span>
+</code></pre></div></div>
+
+<p>You can of course add more links to the navigation.</p>
 
 <p>Upon building the Jekyll site, the theme should be used to render your content.</p>
 
 <h2 id="license">License</h2>
 
-<p>See the <a href="/coffeebrew_jekyll_docs/license.html">LICENSE</a> file.</p>
+<p>See the <a href="LICENSE">LICENSE</a> file.</p>
 
 
       </div>
