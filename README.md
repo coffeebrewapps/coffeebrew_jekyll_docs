@@ -22,4 +22,4 @@ Upon building the Jekyll site, the theme should be used to render your content.
 
 ## License
 
-See the [LICENSE]({{ site.baseurl }}/license.html) file.
+See the [LICENSE](LICENSE) file.
