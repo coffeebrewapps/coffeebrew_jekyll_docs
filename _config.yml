@@ -28,7 +28,9 @@ toc:
 
 coffeebrew_jekyll_docs:
   copyright: "Coffee Brew Apps"
-  license: "MIT License"
+  license:
+    name: "MIT License"
+    url: "/license.html"
   socials:
     - link: "https://github.com/coffeebrewapps"
       icon: "fa-brands fa-github"
