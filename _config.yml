@@ -38,8 +38,8 @@ coffeebrew_jekyll_docs:
       icon: "fa-solid fa-envelope"
   powered_by:
     host:
-      - link: "https://github.com"
-        name: "Github Pages"
+      link: "https://github.com"
+      name: "Github Pages"
 
 collections:
   versions:
