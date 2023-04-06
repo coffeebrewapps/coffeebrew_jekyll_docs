@@ -32,7 +32,7 @@ coffeebrew_jekyll_docs:
     name: "MIT License"
     url: "/license.html"
   socials:
-    - link: "https://github.com/coffeebrewapps"
+    - link: "https://github.com/coffeebrewapps/coffeebrew_jekyll_docs"
       icon: "fa-brands fa-github"
     - link: "https://www.linkedin.com/company/coffeebrewapps/"
       icon: "fa-brands fa-linkedin"
