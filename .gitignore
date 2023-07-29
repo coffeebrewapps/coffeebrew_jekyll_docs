@@ -1,3 +1,4 @@
 .tool-versions
 *.gem
 Gemfile.lock
+_docs

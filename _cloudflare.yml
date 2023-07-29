@@ -1,4 +1,4 @@
-baseurl: /coffeebrew_jekyll_docs
+baseurl:
 
 theme: coffeebrew_jekyll_docs
 
@@ -40,8 +40,8 @@ coffeebrew_jekyll_docs:
       icon: "fa-solid fa-envelope"
   powered_by:
     host:
-      link: "https://github.com"
-      name: "Github Pages"
+      link: "https://pages.cloudflare.com"
+      name: "Cloudflare Pages"
 
 collections:
   versions:

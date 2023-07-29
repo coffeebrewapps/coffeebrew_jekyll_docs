@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+require "fileutils"
+
+version = ARGV[0]
+
+root_dir = File.expand_path("../", __dir__)
+docsprep = File.join(root_dir, "script", "docsprep")
+
+system("#{docsprep} #{version}")
+
+# Build full docs/
+#
+system("JEKYLL_ENV=production bundle exec jekyll build --verbose --trace --config _cloudflare.yml -d ./_docs")
+
+index_dest = File.join(root_dir, "index.md")
+license_dest = File.join(root_dir, "license.md")
+changelog_dest = File.join(root_dir, "versions.md")
+
+if File.exist?(index_dest)
+  FileUtils.rm(index_dest)
+end
+
+if File.exist?(license_dest)
+  FileUtils.rm(license_dest)
+end
+
+if File.exist?(changelog_dest)
+  FileUtils.rm(changelog_dest)
+end
